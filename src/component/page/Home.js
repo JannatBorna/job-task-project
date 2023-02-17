@@ -143,7 +143,7 @@ const Home = () => {
 
            <div className=''>
             <Row>
-                <Col lg={3} md={3} sm={9}>
+                <Col lg={4} md={4} sm={9}>
                      <h4 className='booking-border mt-5'>Last Booking</h4>
                     <div className='booking-border-2'>
                         <div className='booking mt-3'>
@@ -192,7 +192,7 @@ const Home = () => {
                     </div>
                 </Col>
 
-                <Col lg={6} md={6} sm={9}>
+                <Col lg={5} md={5} sm={9}>
                     <div>
                         <h2>1</h2>
                     </div>
