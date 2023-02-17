@@ -1,0 +1,70 @@
+.dasboard{
+    text-align: start;
+    background-color: #ffffff !important;
+}
+.accordion{
+    background-color: #ffffff !important;
+}
+
+.dropdown{
+    background-color: #ffffff !important;
+}
+
+.nav-list{
+    color: #0b0b0b !important;
+    font-size: 10px;
+}
+
+.nav-icon{
+     /* background-color: #760b0b !important; */
+    color: #a21010 !important;
+    font-size: 20px;
+    width: 10%;
+    /* height: 10%; */
+   
+}
+
+.section-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.section-text-1{
+    padding: 0.5em;
+    text-align: start;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    width: 90%;
+}
+
+.section-text-1 p{
+    font-size: 14px;
+}
+
+.percentage{
+    margin-left: 180px;
+}
+
+.booking-border{
+    border: 1px solid black !important;
+     padding: 0.4em;
+}
+.booking-border-2{
+    padding: 0.4em;
+    border-bottom: 1px solid black !important;
+    border-left: 1px solid black !important;
+    border-right: 1px solid black !important;
+}
+.booking{
+    display: flex;
+}
+
+.booking img{
+   width: 20%;
+   height: 20%;
+   border-radius: 90%;
+}
+
+.booking-text{
+    font-size: 10px;
+}
