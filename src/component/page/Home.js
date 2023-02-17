@@ -10,8 +10,7 @@ import boy2 from '../Image/boy-2.jpg';
 import './Home.css';
 
 import {CanvasJSChart} from 'canvasjs-react-charts'
-// var CanvasJS = CanvasJSReact.CanvasJS;
-//  var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 
 const Home = () => {
   
