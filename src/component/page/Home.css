@@ -1,6 +1,9 @@
 .dasboard{
     text-align: start;
-    background-color: #ffffff !important;
+    border-bottom: 1px solid #a0a6a6 !important;
+    border-right: 1px solid #aab2b2 !important;
+    height: 36%;
+    
 }
 .accordion{
     background-color: #ffffff !important;
@@ -174,4 +177,37 @@ table {
 
 .bar p{
    font-size: 13px; 
+}
+
+
+.dropwown{
+   position: relative;
+   
+}
+
+.dropdown-list{
+    position: absolute;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #ffffff !important;
+    width: 50%;
+}
+
+.dropdown-list ul li{
+    cursor: pointer;
+    
+}
+
+.dropdown-list ul li:hover{
+    background-color: #b6b0b0 !important;
+}
+
+.ul{
+    list-style: none;
+}
+
+#nav-dropdown{
+    color: black !important;
+    margin-top: -10px;
+    margin-left: -15px;
+    /* background-color:  !important; */
 }

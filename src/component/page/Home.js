@@ -1,20 +1,63 @@
-import React from 'react';
-import { Row, Col, Nav, Table } from 'react-bootstrap';
+import React, {  useState } from 'react';
+import { Row, Col, Nav, Table, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faGauge, faClipboard, faUser, faBookOpenReader, faArrowRight, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
-import Accordion from 'react-bootstrap/Accordion';
+import {  faGauge, faCaretDown, faBookOpenReader, faArrowRight, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import girl1 from '../Image/girl-1.jpg';
 import girl2 from '../Image/girl-2.jpg';
 import boy1 from '../Image/boy-1.jpg';
 import boy2 from '../Image/boy-2.jpg';
-
 import './Home.css';
 
+import {CanvasJSChart} from 'canvasjs-react-charts'
+// var CanvasJS = CanvasJSReact.CanvasJS;
+//  var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 const Home = () => {
-    
+  
+		const options = {
+			animationEnabled: true,
+			exportEnabled: true,
+			title:{
+				text: "Overview the booking with our site"
+			},
+			axisY: {
+				title: "Sales",
+				includeZero: true
+			},
+			data: [
+			{
+				type: "stepArea",
+				xValueFormatString: "YYYY",
+				dataPoints: [
+					  { x: new Date(2000, 0), y: 40 },
+					  { x: new Date(2001, 0), y: 62 },
+					  { x: new Date(2002, 0), y: 53 },
+					  { x: new Date(2003, 0), y: 49 },
+					  { x: new Date(2004, 0), y: 52 },
+					  { x: new Date(2005, 0), y: 32 },
+					  { x: new Date(2006, 0), y: 28 },
+					  { x: new Date(2007, 0), y: 46 },
+					  { x: new Date(2008, 0), y: 55 },
+					  { x: new Date(2009, 0), y: 88 },
+					  { x: new Date(2010, 0), y: 68 },
+					  { x: new Date(2011, 0), y: 63 },
+					  { x: new Date(2012, 0), y: 65 },
+					  { x: new Date(2013, 0), y: 68 },
+					  { x: new Date(2014, 0), y: 48 },
+					  { x: new Date(2015, 0), y: 39 },
+					  { x: new Date(2016, 0), y: 40 },
+					  { x: new Date(2017, 0), y: 46 }
+				]
+			}
+			]
+		}
+    const [open, setOpen] = useState(false)
+    const menus = ['Premium', 'Golden', 'Silver', 'Brand'];
+
+
     return (
-<div className=''>      
+<div>      
    <Row>
         <Col lg={3} md={3} sm={2}>
             <div className='dasboard'>
@@ -23,82 +66,80 @@ const Home = () => {
                         <FontAwesomeIcon icon={faGauge}  className='nav-icon mx-3' /> 
                        Dasboard
                     </Nav.Link>
-                        <Accordion className='accordion' flush>
-                            <Accordion.Item eventKey="1" className='bg-dark'>
-                                <Accordion.Header className='bg-dark'>
-                                    <FontAwesomeIcon icon={faClipboard} className='nav-icon mx-3'/>
-                                    Catagories list
-                                </Accordion.Header>
-                                <Accordion.Body className='dropdown'>
-                                    <Nav.Link href="/premium" className='nav-list'>Premium</Nav.Link>
-                                    <Nav.Link href="/golden" className='nav-list'>Golden</Nav.Link>
-                                    <Nav.Link href="/silver" className='nav-list'>Silver</Nav.Link>
-                                    <Nav.Link href="/brand" className='nav-list'>Brand</Nav.Link>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                   
-                    <Accordion defaultActiveKey="0" flush>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>
-                                <FontAwesomeIcon icon={faUser} className='nav-icon mx-3'/>
-                                Customer list
-                                </Accordion.Header>
-                            <Accordion.Body className='dropdown'>
-                                <Nav.Link href="/customerList3" className='nav-list'>Customer list-1</Nav.Link>
-                                <Nav.Link href="/customerList2" className='nav-list'>Customer list-2</Nav.Link>
-                                <Nav.Link href="/customerList3" className='nav-list'>Customer list-3</Nav.Link>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
 
-                   <Nav.Link href="/bookingList" className='nav-list'>
+                   
+               <div className='dropdown mt-2'>
+                    <Nav.Link href="#" className='nav-list' onClick={()=> setOpen(!open)}>
+                    <FontAwesomeIcon icon={faGauge}  className='nav-icon mx-3' /> 
+                   Catagories list
+                   <FontAwesomeIcon icon={faCaretDown}  className=' mx-3' /> 
+                  </Nav.Link>
+                 {
+                    open && (
+                     <div className='mx-5 dropdown-list'>
+                   <ul className=' ul'>
+                   {
+                      menus.map((menu) => (
+                          <li 
+                          onClick={()=>setOpen(false)}
+                          className='p-1' key={menu}>{menu}</li>
+                      ))
+                   }
+                   </ul>
+                 </div>
+                 )}
+               </div>
+
+
+
+                   <Nav.Link href="/bookingList" className='nav-list mt-2'>
                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
                     Booking list
                     </Nav.Link>
+                    
 
-                    <Accordion defaultActiveKey="0" flush>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>
-                                <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
-                                Indox
-                            </Accordion.Header>
-                            <Accordion.Body className='dropdown'>
-                                <Nav.Link  href="/companyChat" className='nav-list'>Company Chat</Nav.Link>
-                                <Nav.Link  href="/customerChat" className='nav-list'>Customer Chat</Nav.Link>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
 
-                   <Nav.Link  href="/activeAccount" className='nav-list'>
+                   <Nav.Link  href="/activeAccount" className='nav-list mt-2'>
                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
                     Active Account
                     </Nav.Link>
-                   <Nav.Link  href="/companyOwner" className='nav-list'>
+                   <Nav.Link  href="/companyOwner" className='nav-list mt-2'>
                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
                     Company owner list
                     </Nav.Link>
 
-                    <Accordion defaultActiveKey="0" flush>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>
-                                <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
-                                Propertys
-                            </Accordion.Header>
-                            <Accordion.Body className='dropdown'>
-                                <Nav.Link href="/propertys1" className='nav-list'>Propertys-1 </Nav.Link>
-                                <Nav.Link href="/propertys2" className='nav-list'>Propertys-2 </Nav.Link>
-                                <Nav.Link href="/propertys3" className='nav-list'>Propertys-3 </Nav.Link>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
+                 <div className='d-flex mx-3 mt-2'>  
+                   <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
+                   <NavDropdown title="Propertys" id="nav-dropdown" >
+                   <NavDropdown.Item eventKey="4.1">Propertys-1</NavDropdown.Item>
+                   <NavDropdown.Item eventKey="4.2">Propertys-2</NavDropdown.Item>
+                   <NavDropdown.Item eventKey="4.2">Propertys-3</NavDropdown.Item>
+               </NavDropdown>
+               </div>
 
+                 <div className='d-flex mx-3 mt-2' >  
+                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
+                     <NavDropdown title="Coustomer list" id="nav-dropdown" >
+                     <NavDropdown.Item eventKey="4.1">Company list</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.2">Coustomer list</NavDropdown.Item>
+                    </NavDropdown>
+                 </div>
 
-                   <Nav.Link href="/customerReview" className='nav-list'>
+                   <Nav.Link href="/customerReview" className='nav-list mt-2'>
                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
                     Customer Review
                     </Nav.Link>
-                   <Nav.Link href="/logout" className='nav-list'>
+
+
+                <div className='d-flex mx-3 mt-2'>  
+                    <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
+                    <NavDropdown title="Indox" id="nav-dropdown" >
+                    <NavDropdown.Item eventKey="4.1">Company Chatt</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.2">Customer Chat</NavDropdown.Item>
+                </NavDropdown>
+                </div>
+
+                   <Nav.Link href="/logout" className='nav-list mt-2'>
                     <FontAwesomeIcon icon={faBookOpenReader} className='nav-icon mx-3'/>
                     Logout
                     </Nav.Link>
@@ -196,7 +237,7 @@ const Home = () => {
 
                 <Col lg={5} md={5} sm={9}>
                     <div>
-                        <h2>1</h2>
+                        <CanvasJSChart options = {options}/>
                     </div>
                 </Col>
             </Row>
@@ -414,7 +455,7 @@ const Home = () => {
                 </div>
 
           <div>                    
-            <div className='booking-border-2'>
+            <div className='booking-border-2 mb-5'>
                         <h4 className='mx-2 text-start text-h4'>Monthly Income</h4>
                         <p className='mx-2 text-start text-p'>income of last month and date </p>
                         <hr />
@@ -441,12 +482,6 @@ const Home = () => {
                         </div>
                     </div>
         </div>
-
-
-
-
-
-
      
     </div>        
         </Col>
