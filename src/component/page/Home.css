@@ -50,10 +50,7 @@
      padding: 0.4em;
 }
 .booking-border-2{
-    padding: 0.4em;
-    border-bottom: 1px solid black !important;
-    border-left: 1px solid black !important;
-    border-right: 1px solid black !important;
+    border: 1px solid black !important;
 }
 .booking{
     display: flex;
@@ -67,4 +64,114 @@
 
 .booking-text{
     font-size: 10px;
+}
+
+.arrow-icon{
+    margin-left: 60px;
+}
+
+.a-tag{
+    color: #de1515 !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.summary{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.last-gap {
+  height: 40px;
+}
+
+.status-panding{
+    color: white !important;
+    background-color: #a21010 !important;
+    border: 1px solid #a21010 !important;
+    font-size: 15px;
+}
+
+.status-cencel{
+    color: white !important;
+    background-color: #3d7335 !important;
+    border: 1px solid #3d7335 !important;
+    font-size: 15px;  
+}
+
+.status-approved{
+    color: white !important;
+    background-color: #134fe7 !important;
+    border: 1px solid #134fe7 !important;
+    font-size: 15px;      
+}
+
+.status-running{
+    color: white !important;
+    background-color: #e3c012 !important;
+    border: 1px solid #e3c012 !important;
+    font-size: 15px;          
+}
+
+.status-flowing{
+    color: white !important;
+    background-color: #3db5af !important;
+    border: 1px solid #3db5af !important;
+    font-size: 15px;             
+}
+
+.status-process{
+    color: white !important;
+    background-color: #e010c8 !important;
+    border: 1px solid #e010c8 !important;
+    font-size: 15px;                 
+}
+
+
+.last-eection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.last-section-icon h6{
+    margin-left: 60px;
+    color: #42bf2e !important;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.text-h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text-p{
+  font-size: 10px;  
+}
+
+.check-icon{
+    margin-left: 60px;
+    color: #42bf2e !important;
+}
+
+.progress-icon{
+    width: 90%;
+    font-size: 20px;
+    height: 5%;
+}
+
+.bar h5{
+    font-size: 19px;
+    color: #3b3a3a !important;
+}
+
+.bar p{
+   font-size: 13px; 
 }
