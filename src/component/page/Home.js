@@ -435,13 +435,7 @@ const Home = () => {
                             <ProgressBar variant="primany" now={60} className='progress-icon'/>
                             <p>Last month</p>
                         </div>
-                        {/* <div className='text-start p-1 bar'> */}
-                            {/* <h5>$35000+</h5> */}
-                            {/* <div className='progress-icon'> */}
-                                {/* <ProgressBar variant="success" now={75} className='progress-icon'/> */}
-                            {/* </div> */}
-                            {/* <p>Last month</p> */}
-                        {/* </div> */}
+
                         <div className='text-end mx-2'>
                             <a href="/" className='a-tag'>See More</a>
                         </div>
